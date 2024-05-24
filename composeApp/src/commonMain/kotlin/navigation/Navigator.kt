@@ -48,7 +48,7 @@ fun Navigation(navigator: Navigator) {
                 } else {
                     viewModel.editExpense(expense)
                 }
-//                navigator.popBackStack()
+                navigator.popBackStack()
 
             }
         }
