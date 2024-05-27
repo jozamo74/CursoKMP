@@ -50,6 +50,10 @@ kotlin {
             api(libs.precompose.viewmodel) // For ViewModel intergration
             api(libs.precompose.koin) // For Koin intergration
         }
+
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
     }
 }
 
