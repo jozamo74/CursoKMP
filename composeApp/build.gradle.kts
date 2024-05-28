@@ -31,6 +31,10 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            //koin
+            implementation(project.dependencies.platform("io.insert-koin:koin-bom:3.5.1"))
+            implementation(libs.koin.core)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -49,6 +53,12 @@ kotlin {
             api(libs.precompose.molecule) // For Molecule intergration
             api(libs.precompose.viewmodel) // For ViewModel intergration
             api(libs.precompose.koin) // For Koin intergration
+
+            //koin
+            implementation(project.dependencies.platform("io.insert-koin:koin-bom:3.5.1"))
+            implementation(libs.insert.koin.koin.core)
+            implementation(libs.insert.koin.koin.compose)
+            api(libs.precompose.koin)
         }
 
         commonTest.dependencies {
