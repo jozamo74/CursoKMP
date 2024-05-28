@@ -1,13 +1,18 @@
 package data
 
+import com.expenseApp.db.AppDatabase
 import domain.ExpenseRepository
 import model.Expense
 import model.ExpenseCategory
 
 class ExpensesRepoImpl(
-    private val expenseManager: ExpenseManager
+    private val expenseManager: ExpenseManager,
+    private val appDatabase: AppDatabase
 ): ExpenseRepository {
+
+    private val queries = appDatabase.expensesDbQueries
     override fun getAllExpenses(): List<Expense> {
+        queries.selectAll()
         return expenseManager.fakeExpenseList
     }
 
